@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Gallery</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f4f4f4;
+            color: #333;
+        }
+
+        h1 {
+            text-align: center;
+            padding: 20px;
+            margin: 0;
+            background: linear-gradient(to right, aqua, #81c784);
+            color: black;
+            font-size: 2rem;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            padding: 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            /* transition: transform 0.3s ease, box-shadow 0.3s ease; */
+        }
+
+        /* .gallery img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        } */
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: gray;
+            font-weight: bold;
+            color: black;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            .gallery {
+                gap: 10px;
+            }
+
+            footer {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Photo Gallery</h1>
+    <div class="gallery">
+        <img src="public/Banner.jpg" alt="Photo 1">
+        <img src="public/Banner.jpg" alt="Photo 2">
+        <img src="public/Banner.jpg" alt="Photo 3">
+        <img src="public/Banner.jpg" alt="Photo 4">
+        <img src="public/Banner.jpg" alt="Photo 5">
+    </div>
+    <footer>© All Rights Reserved</footer>
+</body>
+</html>

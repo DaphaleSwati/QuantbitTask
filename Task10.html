@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button Hover Animation</title>
+    <style>
+        .btn {
+            padding: 15px 25px;
+            font-size: 18px;
+            color: white;
+            background-color: #ff6600; 
+            border: 2px solid #ff6600; 
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+        }
+
+        /* Hover animation */
+        .btn:hover {
+            background-color: #ff8533; 
+            border-color: #ff8533; 
+            transform: scale(1.1) rotate(5deg); /* Increase size and rotate slightly */
+            box-shadow: 0 4px 20px rgba(255, 102, 0, 0.4); 
+        }
+
+        .btn:active {
+            background-color: #e65c00; 
+            border-color: #cc5200; 
+            transform: scale(1) rotate(0deg); 
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+    </style>
+</head>
+<body>
+    <button class="btn">Hover Me!</button>
+</body>
+</html>

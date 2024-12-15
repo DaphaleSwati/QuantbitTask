@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+            background-color: #f0f8ff;
+            color: #333;
+        }
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 1.2rem;
+        }
+    </style>
+    <script>
+        async function fetchWeather() {
+            const apiKey = '573984b1d22b982ace852ab162239d3b'; 
+            const city = 'Mumbai'; 
+            const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
+            
+            try {
+                const response = await fetch(apiUrl);
+                if (!response.ok) throw new Error('City not found');
+                const data = await response.json();
+
+                document.getElementById('weather').innerText =
+                    `Temperature: ${data.main.temp}°C, Condition: ${data.weather[0].description}`;
+            } catch (error) {
+                document.getElementById('weather').innerText =
+                    `Error fetching weather data: ${error.message}`;
+            }
+        }
+    </script>
+</head>
+<body onload="fetchWeather()">
+    <h1>Weather App</h1>
+    <p id="weather">Loading weather data...</p>
+</body>
+</html>
